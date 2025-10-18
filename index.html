@@ -5,26 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Finance Partners – 您的最佳财务伙伴</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-        header { background: #28a745; color: white; padding: 20px; text-align: center; }
-        nav { background: #f8f9fa; padding: 10px; text-align: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: #28a745; }
-        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        section { margin-bottom: 40px; }
-        h1, h2, h3 { color: #28a745; }
-        .hero { background: #d4edda; padding: 40px; text-align: center; }
-        .services { display: flex; justify-content: space-around; flex-wrap: wrap; }
-        .service { width: 30%; margin-bottom: 20px; padding: 20px; border: 1px solid #ddd; }
-        .why-choose { display: flex; justify-content: space-around; flex-wrap: wrap; }
-        .feature { width: 20%; margin-bottom: 20px; text-align: center; }
-        .steps { display: flex; justify-content: space-around; flex-wrap: wrap; }
-        .step { width: 30%; padding: 20px; text-align: center; }
-        footer { background: #343a40; color: white; padding: 20px; text-align: center; }
-        .form-container { max-width: 600px; margin: 0 auto; padding: 20px; background: #f8f9fa; border-radius: 8px; }
-        .form-container label { display: block; margin: 10px 0 5px; font-weight: bold; }
-        .form-container input, .form-container select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; }
-        .form-container button { background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
-        .form-container button:hover { background: #218838; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+            color: #333; 
+            background: #f5f5f5; 
+        }
+        header { 
+            background: linear-gradient(135deg, #28a745, #218838); 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+        }
+        nav { 
+            background: #ffffff; 
+            padding: 15px; 
+            text-align: center; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+        }
+        nav a { 
+            margin: 0 20px; 
+            text-decoration: none; 
+            color: #28a745; 
+            font-weight: bold; 
+            transition: color 0.3s; 
+        }
+        nav a:hover { 
+            color: #218838; 
+        }
+        main { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 30px 20px; 
+        }
+        section { 
+            margin-bottom: 50px; 
+        }
+        h1, h2, h3 { 
+            color: #28a745; 
+        }
+        .hero { 
+            background: #d4edda; 
+            padding: 50px; 
+            text-align: center; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        }
+        .hero button { 
+            background: #28a745; 
+            color: white; 
+            padding: 12px 30px; 
+            border: none; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            transition: transform 0.2s, background 0.3s; 
+        }
+        .hero button:hover { 
+            background: #218838; 
+            transform: scale(1.05); 
+        }
+        .services { 
+            display: flex; 
+            justify-content: space-around; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        .service { 
+            width: 30%; 
+            margin-bottom: 20px; 
+            padding: 20px; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 8px; 
+            background: #fff; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            transition: transform 0.3s; 
+        }
+        .service:hover { 
+            transform: translateY(-5px); 
+        }
+        .why-choose { 
+            display: flex; 
+            justify-content: space-around; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        .feature { 
+            width: 18%; 
+            margin-bottom: 20px; 
+            text-align: center; 
+            padding: 15px; 
+            background: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+        }
+        .steps { 
+            display: flex; 
+            justify-content: space-around; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        .step { 
+            width: 30%; 
+            padding: 20px; 
+            text-align: center; 
+            background: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+        }
+        .form-container { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 30px; 
+            background: #ffffff; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+            transition: all 0.3s ease; 
+        }
+        .form-container h2 { 
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+        .form-container label { 
+            display: block; 
+            margin: 10px 0 5px; 
+            font-weight: 600; 
+            color: #333; 
+        }
+        .form-container input, 
+        .form-container select { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 20px; 
+            border: 1px solid #ccc; 
+            border-radius: 6px; 
+            font-size: 16px; 
+            background: #fafafa; 
+            transition: border-color 0.3s, box-shadow 0.3s; 
+        }
+        .form-container input:focus, 
+        .form-container select:focus { 
+            outline: none; 
+            border-color: #28a745; 
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.3); 
+            background: #fff; 
+        }
+        .form-container button { 
+            width: 100%; 
+            background: #28a745; 
+            color: white; 
+            padding: 14px; 
+            border: none; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            font-size: 18px; 
+            font-weight: bold; 
+            transition: transform 0.2s, background 0.3s; 
+        }
+        .form-container button:hover { 
+            background: #218838; 
+            transform: scale(1.02); 
+        }
+        .form-container .form-group { 
+            margin-bottom: 20px; 
+        }
+        .form-container .form-group:last-child { 
+            margin-bottom: 0; 
+        }
+        footer { 
+            background: #343a40; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            margin-top: 40px; 
+        }
+        @media (max-width: 768px) {
+            .service, .feature, .step { 
+                width: 100%; 
+            }
+            .form-container { 
+                padding: 20px; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -118,34 +283,42 @@
             <div class="form-container">
                 <h2>贷款申请表</h2>
                 <form id="loanApplicationForm" onsubmit="submitForm(event)">
-                    <label for="fullName">姓名</label>
-                    <input type="text" id="fullName" name="fullName" required placeholder="请输入您的姓名">
-                    
-                    <label for="phone">电话号码</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="请输入您的电话号码">
-                    
-                    <label for="email">电子邮件</label>
-                    <input type="email" id="email" name="email" required placeholder="请输入您的电子邮件">
-                    
-                    <label for="loanAmount">贷款金额（元）</label>
-                    <input type="number" id="loanAmount" name="loanAmount" required min="5000" max="100000" placeholder="5000 - 100000">
-                    
-                    <label for="loanTerm">贷款期限（月）</label>
-                    <select id="loanTerm" name="loanTerm" required>
-                        <option value="" disabled selected>请选择贷款期限</option>
-                        <option value="6">6 个月</option>
-                        <option value="12">12 个月</option>
-                        <option value="24">24 个月</option>
-                        <option value="36">36 个月</option>
-                        <option value="48">48 个月</option>
-                        <option value="60">60 个月</option>
-                        <option value="72">72 个月</option>
-                    </select>
-                    
-                    <label for="loanPurpose">贷款用途</label>
-                    <input type="text" id="loanPurpose" name="loanPurpose" placeholder="请输入贷款用途（可选）">
-                    
-                    <button type="submit">提交申请</button>
+                    <div class="form-group">
+                        <label for="fullName">姓名</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="请输入您的姓名">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">电话号码</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="请输入您的电话号码">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">电子邮件</label>
+                        <input type="email" id="email" name="email" required placeholder="请输入您的电子邮件">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanAmount">贷款金额（元）</label>
+                        <input type="number" id="loanAmount" name="loanAmount" required min="5000" max="100000" placeholder="5000 - 100000">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTerm">贷款期限（月）</label>
+                        <select id="loanTerm" name="loanTerm" required>
+                            <option value="" disabled selected>请选择贷款期限</option>
+                            <option value="6">6 个月</option>
+                            <option value="12">12 个月</option>
+                            <option value="24">24 个月</option>
+                            <option value="36">36 个月</option>
+                            <option value="48">48 个月</option>
+                            <option value="60">60 个月</option>
+                            <option value="72">72 个月</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanPurpose">贷款用途</label>
+                        <input type="text" id="loanPurpose" name="loanPurpose" placeholder="请输入贷款用途（可选）">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">提交申请</button>
+                    </div>
                 </form>
             </div>
             
