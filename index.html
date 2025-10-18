@@ -4,70 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Finance Partners – 您的最佳财务伙伴</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <style>
+        /* CSS Keyframes for Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 198, 137, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 198, 137, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 198, 137, 0);
+            }
+        }
+
+        /* --- 基础样式 --- */
         body { 
             font-family: 'Segoe UI', Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
             line-height: 1.6; 
-            color: #333; 
-            background: #f5f5f5; 
+            color: #34495e; /* 更柔和的文本颜色 */
+            background: #f7f9fc; /* 更干净的背景色 */
         }
+        
+        /* --- 头部和导航 --- */
         header { 
-            background: linear-gradient(135deg, #28a745, #218838); 
+            /* 更现代的绿色渐变 */
+            background: linear-gradient(135deg, #00c689, #00a16e); 
             color: white; 
             padding: 30px; 
             text-align: center; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
         }
+        
         nav { 
             background: #ffffff; 
             padding: 15px; 
             text-align: center; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a { 
             margin: 0 20px; 
             text-decoration: none; 
-            color: #28a745; 
+            color: #00a16e; /* 匹配新颜色 */
             font-weight: bold; 
             transition: color 0.3s; 
         }
         nav a:hover { 
-            color: #218838; 
+            color: #00c689; 
         }
+        
         main { 
             max-width: 1200px; 
             margin: 0 auto; 
             padding: 30px 20px; 
+            overflow-x: hidden; /* 防止横向滚动条 */
         }
         section { 
             margin-bottom: 50px; 
         }
         h1, h2, h3 { 
-            color: #28a745; 
+            color: #00a16e; /* 匹配新颜色 */
         }
+        
+        /* --- 英雄区 (Hero) --- */
         .hero { 
-            background: #d4edda; 
+            background-color: #e6fcf5; /* 匹配的浅绿色 */
+            /* 添加了微妙的圆点背景图案 */
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300c689' fill-opacity='0.1'%3E%3Ccircle cx='10' cy='10' r='3'/%3E%3C/g%3E%3C/svg%3E");
             padding: 50px; 
             text-align: center; 
             border-radius: 10px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            /* 页面加载动画 */
+            animation: fadeIn 1s ease-in;
+        }
+        .hero h2 {
+            font-size: 2.5em;
         }
         .hero button { 
-            background: #28a745; 
+            background: #00c689; /* 匹配新颜色 */
             color: white; 
-            padding: 12px 30px; 
+            padding: 14px 35px; /* 稍大的按钮 */
             border: none; 
             border-radius: 25px; 
             cursor: pointer; 
-            font-size: 16px; 
+            font-size: 18px; 
             transition: transform 0.2s, background 0.3s; 
+            box-shadow: 0 4px 15px rgba(0, 198, 137, 0.3);
+            /* 添加脉冲动画 */
+            animation: pulse 2s infinite;
         }
         .hero button:hover { 
-            background: #218838; 
-            transform: scale(1.05); 
+            background: #00a16e; 
+            transform: scale(1.05);
+            animation: none; /* 悬停时停止脉冲 */
         }
+        
+        /* --- 服务板块 (带图标) --- */
         .services { 
             display: flex; 
             justify-content: space-around; 
@@ -77,16 +133,25 @@
         .service { 
             width: 30%; 
             margin-bottom: 20px; 
-            padding: 20px; 
+            padding: 25px; 
             border: 1px solid #e0e0e0; 
             border-radius: 8px; 
             background: #fff; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
-            transition: transform 0.3s; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            text-align: center; /* 图标居中 */
         }
         .service:hover { 
-            transform: translateY(-5px); 
+            transform: translateY(-8px); /* 更明显的悬停 */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
+        .service i {
+            font-size: 3em; /* 图标大小 */
+            color: #00c689; /* 图标颜色 */
+            margin-bottom: 15px;
+        }
+        
+        /* --- 为什么选择我们 (带图标) --- */
         .why-choose { 
             display: flex; 
             justify-content: space-around; 
@@ -97,11 +162,23 @@
             width: 18%; 
             margin-bottom: 20px; 
             text-align: center; 
-            padding: 15px; 
+            padding: 20px; 
             background: #fff; 
             border-radius: 8px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .feature i {
+            font-size: 2.5em;
+            color: #00c689;
+            margin-bottom: 10px;
+        }
+        
+        /* --- 步骤 (带图标) --- */
         .steps { 
             display: flex; 
             justify-content: space-around; 
@@ -114,11 +191,28 @@
             text-align: center; 
             background: #fff; 
             border-radius: 8px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .step i {
+            font-size: 3em;
+            color: #00c689;
+            margin-bottom: 15px;
+        }
+        .step h3 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        
+        /* --- 表单样式 --- */
         .form-container { 
             max-width: 700px; 
-            margin: 0 auto; 
+            margin: 40px auto 0 auto; /* 步骤和表单间距 */
             padding: 30px; 
             background: #ffffff; 
             border-radius: 12px; 
@@ -133,7 +227,7 @@
             display: block; 
             margin: 10px 0 5px; 
             font-weight: 600; 
-            color: #333; 
+            color: #34495e; 
         }
         .form-container input, 
         .form-container select { 
@@ -143,19 +237,20 @@
             border: 1px solid #ccc; 
             border-radius: 6px; 
             font-size: 16px; 
-            background: #fafafa; 
+            background: #f8f9fa; 
             transition: border-color 0.3s, box-shadow 0.3s; 
+            box-sizing: border-box; /* 确保 padding 不影响宽度 */
         }
         .form-container input:focus, 
         .form-container select:focus { 
             outline: none; 
-            border-color: #28a745; 
-            box-shadow: 0 0 8px rgba(40, 167, 69, 0.3); 
+            border-color: #00c689; /* 匹配新颜色 */
+            box-shadow: 0 0 8px rgba(0, 198, 137, 0.3); 
             background: #fff; 
         }
         .form-container button { 
             width: 100%; 
-            background: #28a745; 
+            background: #00c689; /* 匹配新颜色 */
             color: white; 
             padding: 14px; 
             border: none; 
@@ -166,7 +261,7 @@
             transition: transform 0.2s, background 0.3s; 
         }
         .form-container button:hover { 
-            background: #218838; 
+            background: #00a16e; 
             transform: scale(1.02); 
         }
         .form-container .form-group { 
@@ -175,19 +270,52 @@
         .form-container .form-group:last-child { 
             margin-bottom: 0; 
         }
+        
+        /* --- 页脚 --- */
         footer { 
-            background: #343a40; 
+            background: #2c3e50; /* 更现代的深蓝灰 */
             color: white; 
-            padding: 20px; 
+            padding: 30px; /* 增加 padding */
             text-align: center; 
             margin-top: 40px; 
         }
+        
+        /* --- 滚动动画辅助类 --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-up {
+            transform: translateY(40px);
+        }
+        /* JS 添加 'is-visible' 类来触发动画 */
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 响应式设计 --- */
+        @media (max-width: 992px) {
+            .service, .feature, .step {
+                width: 45%; /* 平板上显示两列 */
+            }
+            .feature {
+                width: 30%; /* "Why Choose" 在平板上可以紧凑些 */
+            }
+        }
+        
         @media (max-width: 768px) {
             .service, .feature, .step { 
-                width: 100%; 
+                width: 100%; /* 手机上全宽 */
             }
             .form-container { 
                 padding: 20px; 
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h2 {
+                font-size: 2em;
             }
         }
     </style>
@@ -213,74 +341,85 @@
             <button onclick="applyNow()">立即申请 (可线上或线下)</button>
         </section>
         
-        <section id="about">
+        <section id="about" class="animate-on-scroll slide-in-up">
             <h2>中国值得信赖的公司</h2>
             <p>我们是中国的首选财务公司。提供的服务例如个人或商业贷款给中国人民。我们专业于定制合适的财务计划。</p>
         </section>
         
-        <section id="services">
+        <section id="services" class="animate-on-scroll slide-in-up">
             <h2>我们的贷款服务</h2>
             <div class="services">
-                <div class="service">
+                <div class="service animate-on-scroll slide-in-up" style="transition-delay: 0s;">
+                    <i class="fa-solid fa-user"></i>
                     <h3>个人贷款</h3>
                     <p>这是一个快速简便的获得贷款和快速现金且利率低的方法。</p>
                 </div>
-                <div class="service">
+                <div class="service animate-on-scroll slide-in-up" style="transition-delay: 0.1s;">
+                    <i class="fa-solid fa-briefcase"></i>
                     <h3>商业贷款</h3>
                     <p>你的公司是否需要更多的钱来发展你的业务或支付费用？而银行不能批准你的贷款？别担心，我们在这里用我们的在线小企业贷款解决方案来帮助你！</p>
                 </div>
-                <div class="service">
+                <div class="service animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
                     <h3>紧急贷款</h3>
                     <p>紧急贷款可以帮助你支付紧急、必要的费用。它们比其他类型的贷款，如发薪日贷款或车主贷款要便宜和安全得多。它们可以同样简单和快速。</p>
                 </div>
             </div>
         </section>
         
-        <section id="why-us">
+        <section id="why-us" class="animate-on-scroll slide-in-up">
             <h2>为什么选择我们？</h2>
             <p>无论你的情况有多糟，Elite Finance Partners都愿意向你伸出援手。今天就向我们申请个人贷款，并在2小时内获得贷款批准!</p>
             <div class="why-choose">
-                <div class="feature">
+                <div class="feature animate-on-scroll slide-in-up" style="transition-delay: 0s;">
+                    <i class="fa-solid fa-percent"></i>
                     <h3>最低的利率</h3>
-                    <p>为了最大限度地节省开支，你希望在没有额外费用或收费的情况下偿还已经收取的相同金额。低利率可以减少您每月的抵押贷款付款。</p>
+                    <p>低利率可以减少您每月的抵押贷款付款。</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll slide-in-up" style="transition-delay: 0.1s;">
+                    <i class="fa-solid fa-sliders"></i>
                     <h3>灵活还款</h3>
                     <p>Elite Finance Partners让您可以灵活地将您的还款期延长至72个月。</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
+                    <i class="fa-solid fa-rocket"></i>
                     <h3>简单和快速的申请</h3>
-                    <p>我们的目标是为我们的客户提供一个快速和简单的申请过程。通过在我们的在线申请表格上填写准确的信息，所有类型的贷款的审批过程都是快速和无障碍的。</p>
+                    <p>我们的目标是为我们的客户提供一个快速和简单的申请过程。</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll slide-in-up" style="transition-delay: 0.3s;">
+                    <i class="fa-solid fa-user-tie"></i>
                     <h3>专业经验</h3>
-                    <p>凭借我们在市场上的悠久历史，我们相信每个人都有自己的财务紧急情况，我们为客户提供专业建议，并指导他们根据自己的需求获得合适的贷款。</p>
+                    <p>我们为客户提供专业建议，并指导他们获得合适的贷款。</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll slide-in-up" style="transition-delay: 0.4s;">
+                    <i class="fa-solid fa-clock"></i>
                     <h3>24小时在线申请</h3>
-                    <p>只需在我们网站上的申请表中留下您的基本信息，我们将很快与您联系。</p>
+                    <p>只需在申请表中留下您的信息，我们将很快与您联系。</p>
                 </div>
             </div>
         </section>
         
         <section id="apply">
-            <h2>如何申请？</h2>
+            <h2 class="animate-on-scroll slide-in-up">如何申请？</h2>
             <div class="steps">
-                <div class="step">
+                <div class="step animate-on-scroll slide-in-up" style="transition-delay: 0s;">
+                    <i class="fa-solid fa-file-signature"></i>
                     <h3>步骤1</h3>
                     <p>请填写表格或发微信给我们。</p>
                 </div>
-                <div class="step">
+                <div class="step animate-on-scroll slide-in-up" style="transition-delay: 0.1s;">
+                    <i class="fa-solid fa-comments-dollar"></i>
                     <h3>步骤2</h3>
                     <p>解决方案</p>
                 </div>
-                <div class="step">
+                <div class="step animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
                     <h3>步骤3</h3>
                     <p>收到资金</p>
                 </div>
             </div>
             
-            <div class="form-container">
+            <div class="form-container animate-on-scroll slide-in-up">
                 <h2>贷款申请表</h2>
                 <form id="loanApplicationForm" onsubmit="submitForm(event)">
                     <div class="form-group">
@@ -322,16 +461,18 @@
                 </form>
             </div>
             
-            <h2>利率的算法</h2>
-            <p>贷款信息：年利率介于 4% 至 10%* 之间。贷款期限在 6 个月至 72 个月之间。</p>
-            <p>例如，一笔为期 1 年、月利率为 0.8% 的 2,000 元贷款，总还款额为 2,192 元。没有相关费用和隐藏费用。</p>
-            <p><em>此信息旨在说明中国公司提供的一般贷款条款。条款和条件适用。</em></p>
+            <div class="animate-on-scroll slide-in-up" style="margin-top: 30px;">
+                <h2>利率的算法</h2>
+                <p>贷款信息：年利率介于 4% 至 10%* 之间。贷款期限在 6 个月至 72 个月之间。</p>
+                <p>例如，一笔为期 1 年、月利率为 0.8% 的 2,000 元贷款，总还款额为 2,192 元。没有相关费用和隐藏费用。</p>
+                <p><em>此信息旨在说明中国公司提供的一般贷款条款。条款和条件适用。</em></p>
+            </div>
         </section>
         
-        <section id="contact">
+        <section id="contact" class="animate-on-scroll slide-in-up">
             <h2>与我们取得联系</h2>
             <p>我们在这里帮助每个企业和个人。只要提交你的详细资料，我们很快就会与你联系。你也可以给我们发微信，询问任何进一步的问题。</p>
-            <button onclick="applyNow()">立即申请</button>
+            <button onclick="applyNow()" style="background: #00c689; color: white; padding: 12px 30px; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; transition: transform 0.2s, background 0.3s;">立即申请</button>
             <p>我们将在24小时内与您联系。</p>
         </section>
     </main>
@@ -342,7 +483,8 @@
     
     <script>
         function applyNow() {
-            alert('申请功能 - 请填写表格或联系我们');
+            // 平滑滚动到表单
+            document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
         }
         
         function submitForm(event) {
@@ -350,6 +492,27 @@
             alert('您的贷款申请已提交！我们将在24小时内与您联系。');
             document.getElementById('loanApplicationForm').reset();
         }
+
+        // --- 用于滚动动画的 JavaScript ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const targets = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // 动画只播放一次
+                    }
+                });
+            }, {
+                root: null, // 相对于视口
+                threshold: 0.1 // 元素进入视口 10% 时触发
+            });
+
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+        });
     </script>
 </body>
 </html>
