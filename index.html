@@ -606,7 +606,7 @@
             
             <div class="form-container animate-on-scroll slide-in-up">
                 <h2 data-lang-key="formTitle">贷款申请表</h2>
-                <form id="loanApplicationForm" data-whatsapp-number="60122847784">
+                <form id="loanApplicationForm" data-whatsapp-number="60106656327">
                     <div class="form-group">
                         <label for="fullName" data-lang-key="formNameLabel">姓名</label>
                         <input type="text" id="fullName" name="fullName" required data-lang-key-placeholder="formNamePlaceholder" placeholder="请输入您的姓名">
@@ -721,7 +721,7 @@
             const encodedMessage = encodeURIComponent(message);
             
             // 4. 从 data- 属性获取 WhatsApp 号码 (如果未设置，则使用备用号码)
-            const whatsappNumber = form.dataset.whatsappNumber || "60122847784"; 
+            const whatsappNumber = form.dataset.whatsappNumber || "60106656327"; 
             
             // 5. 构建 WhatsApp 链接
             const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
