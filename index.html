@@ -606,7 +606,7 @@
             
             <div class="form-container animate-on-scroll slide-in-up">
                 <h2 data-lang-key="formTitle">贷款申请表</h2>
-                <form id="loanApplicationForm" data-whatsapp-number="60106656327">
+                <form id="loanApplicationForm" data-whatsapp-number="60177215077">
                     <div class="form-group">
                         <label for="fullName" data-lang-key="formNameLabel">姓名</label>
                         <input type="text" id="fullName" name="fullName" required data-lang-key-placeholder="formNamePlaceholder" placeholder="请输入您的姓名">
@@ -721,7 +721,7 @@
             const encodedMessage = encodeURIComponent(message);
             
             // 4. 从 data- 属性获取 WhatsApp 号码 (如果未设置，则使用备用号码)
-            const whatsappNumber = form.dataset.whatsappNumber || "60106656327"; 
+            const whatsappNumber = form.dataset.whatsappNumber || "60177215077"; 
             
             // 5. 构建 WhatsApp 链接
             const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -760,4 +760,331 @@
                     "aboutTitle": "关于 LYX Finance Partners – 建立信任的基石",
                     "aboutIntro": "我们不仅仅是贷款提供者，更是您值得信赖的财务伙伴。我们致力于提供透明、可靠且以客户为中心的服务，帮助您实现财务目标。",
                     "aboutCard1Title": "公司历史与承诺",
-                    "aboutCard1Text1": "<strong>2001年开创</strong>，LYX Finance Partners 拥有超过二十年的行业经验。我们见
+                    "aboutCard1Text1": "<strong>2001年开创</strong>，LYX Finance Partners 拥有超过二十年的行业经验。我们见证了市场的变迁，始终坚守诚信和专业的原则。",
+                    "aboutCard1Text2": "我们的使命是为客户提供最合适的财务解决方案，无论市场环境如何，我们都是您坚实的后盾。",
+                    "aboutCard2Title": "信心保证与成功案例",
+                    "aboutCard2Text1": "我们成功的基石源于客户的信任。我们已帮助数以千计的客户渡过财务难关，实现个人和商业目标。",
+                    "aboutCard2Li1": "<strong>98%</strong> 的客户满意度",
+                    "aboutCard2Li2": "<strong>快速审批</strong>：真实案例中，最快2小时放款",
+                    "aboutCard2Li3": "<strong>透明条款</strong>：无隐藏费用，给您完全的信心",
+                    "servicesTitle": "我们的贷款服务",
+                    "service1Title": "个人贷款",
+                    "service1Desc": "这是一个快速简便的获得贷款和快速现金且利率低的方法。",
+                    "service2Title": "商业贷款",
+                    "service2Desc": "你的公司是否需要更多的钱来发展你的业务或支付费用？而银行不能批准你的贷款？别担心，我们在这里用我们的在线小企业贷款解决方案来帮助你！",
+                    "service3Title": "紧急贷款",
+                    "service3Desc": "紧急贷款可以帮助你支付紧急、必要的费用。它们比其他类型的贷款，如发薪日贷款或车主贷款要便宜和安全得多。它们可以同样简单和快速。",
+                    "whyUsTitle": "为什么选择我们？",
+                    "whyUsIntro": "无论你的情况有多糟，LYX Finance Partners都愿意向你伸出援手。今天就向我们申请个人贷款，并在2小时内获得贷款批准!",
+                    "feature1Title": "最低的利率",
+                    "feature1Desc": "低利率可以减少您每月的抵押贷款付款。",
+                    "feature2Title": "灵活还款",
+                    "feature2Desc": "LYX Finance Partners让您可以灵活地将您的还款期延长至72个月。",
+                    "feature3Title": "简单和快速的申请",
+                    "feature3Desc": "我们的目标是为我们的客户提供一个快速和简单的申请过程。",
+                    "feature4Title": "专业经验",
+                    "feature4Desc": "我们为客户提供专业建议，并指导他们获得合适的贷款。",
+                    "feature5Title": "24小时在线申请",
+                    "feature5Desc": "只需在申请表中留下您的信息，我们将很快与您联系。",
+                    "applyTitle": "如何申请？",
+                    "step1Title": "步骤1",
+                    "step1Desc": "请填写表格或发微信给我们。",
+                    "step2Title": "步骤2",
+                    "step2Desc": "解决方案",
+                    "step3Title": "步骤3",
+                    "step3Desc": "收到资金",
+                    "formTitle": "贷款申请表",
+                    "formNameLabel": "姓名",
+                    "formNamePlaceholder": "请输入您的姓名",
+                    "formPhoneLabel": "电话号码",
+                    "formPhonePlaceholder": "请输入您的电话号码",
+                    "formEmailLabel": "电子邮件",
+                    "formEmailPlaceholder": "请输入您的电子邮件",
+                    "formAmountLabel": "贷款金额（元）",
+                    "formAmountPlaceholder": "5000 - 100000",
+                    "formTermLabel": "贷款期限（月）",
+                    "formTermSelect": "请选择贷款期限",
+                    "formTerm6": "6 个月",
+                    "formTerm12": "12 个月",
+                    "formTerm24": "24 个月",
+                    "formTerm36": "36 个月",
+                    "formTerm48": "48 个月",
+                    "formTerm60": "60 个月",
+                    "formTerm72": "72 个月",
+                    "formPurposeLabel": "贷款用途",
+                    "formPurposePlaceholder": "请输入贷款用途（可选）",
+                    "formSubmitBtn": "提交申请",
+                    "ratesTitle": "利率的算法",
+                    "ratesDesc1": "贷款信息：年利率介于 4% 至 10%* 之间。贷款期限在 6 个月至 72 个月之间。",
+                    "ratesDesc2": "例如，一笔为期 1 年、月利率为 0.8% 的 2,000 元贷款，总还款额为 2,192 元。没有相关费用和隐藏费用。",
+                    "ratesDesc3": "<em>此信息旨在说明马来西亚公司提供的一般贷款条款。条款和条件适用。</em>",
+                    "contactTitle": "与我们取得联系",
+                    "contactIntro": "我们在这里帮助每个企业和个人。只要提交你的详细资料，我们很快就会与你联系。你也可以给我们发微信，询问任何进一步的问题。",
+                    "contactButton": "立即申请",
+                    "contactNote": "我们将在24小时内与您联系。",
+                    "footerRights": "&copy; 2025 LYX Finance Partners. All rights reserved."
+                },
+                'en': {
+                    "title": "LYX Finance Partners – Your Best Financial Partner",
+                    "navHome": "Home",
+                    "navAbout": "About Us",
+                    "navServices": "Services",
+                    "navWhyUs": "Why Us",
+                    "navApply": "Apply",
+                    "navContact": "Contact",
+                    "heroTitle": "Apply Today, Approve Today!",
+                    "heroSubtitle1": "Fast & Licensed",
+                    "heroSubtitle2": "LYX Finance Partners offers safe, licensed personal loans. Apply now and get RM 5,000 – RM 100,000 in just 2 hours!",
+                    "heroButton": "Apply Now (Online or Offline)",
+                    "aboutTitle": "About LYX Finance Partners – Building Trust",
+                    "aboutIntro": "We are more than just loan providers; we are your trusted financial partners. We are committed to providing transparent, reliable, and customer-centric services to help you achieve your financial goals.",
+                    "aboutCard1Title": "Company History & Commitment",
+                    "aboutCard1Text1": "<strong>Established in 2001</strong>, LYX Finance Partners has over two decades of industry experience. We have witnessed market changes and always adhered to the principles of integrity and professionalism.",
+                    "aboutCard1Text2": "Our mission is to provide customers with the most suitable financial solutions. No matter the market environment, we are your solid backing.",
+                    "aboutCard2Title": "Confidence Guarantee & Success Stories",
+                    "aboutCard2Text1": "The cornerstone of our success comes from customer trust. We have helped thousands of clients overcome financial difficulties and achieve personal and business goals.",
+                    "aboutCard2Li1": "<strong>98%</strong> Customer Satisfaction",
+                    "aboutCard2Li2": "<strong>Fast Approval</strong>: In real cases, funds released in as fast as 2 hours",
+                    "aboutCard2Li3": "<strong>Transparent Terms</strong>: No hidden fees, giving you complete confidence",
+                    "servicesTitle": "Our Loan Services",
+                    "service1Title": "Personal Loan",
+                    "service1Desc": "This is a quick and easy way to get a loan and fast cash at low-interest rates.",
+                    "service2Title": "Business Loan",
+                    "service2Desc": "Does your company need more money to grow your business or pay expenses? And the bank can't approve your loan? Don't worry, we are here to help you with our online small business loan solutions!",
+                    "service3Title": "Emergency Loan",
+                    "service3Desc": "Emergency loans can help you pay for urgent, necessary expenses. They are much cheaper and safer than other types of loans, such as payday loans or car title loans. They can be just as simple and fast.",
+                    "whyUsTitle": "Why Choose Us?",
+                    "whyUsIntro": "No matter how bad your situation is, LYX Finance Partners is willing to lend you a helping hand. Apply for a personal loan from us today and get your loan approved within 2 hours!",
+                    "feature1Title": "Lowest Interest Rates",
+                    "feature1Desc": "Low interest rates can reduce your monthly mortgage payments.",
+                    "feature2Title": "Flexible Repayment",
+                    "feature2Desc": "LYX Finance Partners gives you the flexibility to extend your repayment period up to 72 months.",
+                    "feature3Title": "Simple & Fast Application",
+                    "feature3Desc": "We aim to provide our customers with a fast and simple application process.",
+                    "feature4Title": "Professional Experience",
+                    "feature4Desc": "We provide professional advice to our clients and guide them in obtaining the right loan.",
+                    "feature5Title": "24-Hour Online Application",
+                    "feature5Desc": "Just leave your information in the application form, and we will contact you soon.",
+                    "applyTitle": "How to Apply?",
+                    "step1Title": "Step 1",
+                    "step1Desc": "Please fill out the form or send us a WeChat message.",
+                    "step2Title": "Step 2",
+                    "step2Desc": "Solution",
+                    "step3Title": "Step 3",
+                    "step3Desc": "Receive Funds",
+                    "formTitle": "Loan Application Form",
+                    "formNameLabel": "Full Name",
+                    "formNamePlaceholder": "Enter your full name",
+                    "formPhoneLabel": "Phone Number",
+                    "formPhonePlaceholder": "Enter your phone number",
+                    "formEmailLabel": "Email",
+                    "formEmailPlaceholder": "Enter your email",
+                    "formAmountLabel": "Loan Amount (RM)",
+                    "formAmountPlaceholder": "5000 - 100000",
+                    "formTermLabel": "Loan Term (Months)",
+                    "formTermSelect": "Select loan term",
+                    "formTerm6": "6 Months",
+                    "formTerm12": "12 Months",
+                    "formTerm24": "24 Months",
+                    "formTerm36": "36 Months",
+                    "formTerm48": "48 Months",
+                    "formTerm60": "60 Months",
+                    "formTerm72": "72 Months",
+                    "formPurposeLabel": "Loan Purpose",
+                    "formPurposePlaceholder": "Enter loan purpose (optional)",
+                    "formSubmitBtn": "Submit Application",
+                    "ratesTitle": "Interest Rate Calculation",
+                    "ratesDesc1": "Loan Information: Annual interest rates range from 4% to 10%*. Loan tenure is between 6 months and 72 months.",
+                    "ratesDesc2": "For example, a RM 2,000 loan for 1 year with a 0.8% monthly interest rate will have a total repayment of RM 2,192. There are no associated or hidden fees.",
+                    "ratesDesc3": "<em>This information is intended to illustrate general loan terms offered by Malaysian companies. Terms and conditions apply.</em>",
+                    "contactTitle": "Get in Touch With Us",
+                    "contactIntro": "We are here to help every business and individual. Just submit your details, and we will contact you soon. You can also send us a WeChat message for any further questions.",
+                    "contactButton": "Apply Now",
+                    "contactNote": "We will contact you within 24 hours.",
+                    "footerRights": "&copy; 2025 LYX Finance Partners. All rights reserved."
+                },
+                'ms': {
+                    "title": "LYX Finance Partners – Rakan Kewangan Terbaik Anda",
+                    "navHome": "Utama",
+                    "navAbout": "Mengenai Kami",
+                    "navServices": "Perkhidmatan",
+                    "navWhyUs": "Kenapa Kami",
+                    "navApply": "Mohon",
+                    "navContact": "Hubungi",
+                    "heroTitle": "Mohon Hari Ini, Lulus Hari Ini!",
+                    "heroSubtitle1": "Cepat & Berlesen",
+                    "heroSubtitle2": "LYX Finance Partners menawarkan pinjaman peribadi yang selamat dan berlesen. Mohon sekarang dan dapatkan RM 5,000 – RM 100,000 dalam masa 2 jam sahaja!",
+                    "heroButton": "Mohon Sekarang (Dalam Talian atau Luar Talian)",
+                    "aboutTitle": "Mengenai LYX Finance Partners – Membina Kepercayaan",
+                    "aboutIntro": "Kami bukan sahaja penyedia pinjaman; kami adalah rakan kongsi kewangan anda yang dipercayai. Kami komited untuk menyediakan perkhidmatan yang telus, boleh dipercayai, dan berpaksikan pelanggan untuk membantu anda mencapai matlamat kewangan anda.",
+                    "aboutCard1Title": "Sejarah & Komitmen Syarikat",
+                    "aboutCard1Text1": "<strong>Ditubuhkan pada 2001</strong>, LYX Finance Partners mempunyai lebih dua dekad pengalaman industri. Kami telah menyaksikan perubahan pasaran dan sentiasa berpegang kepada prinsip integriti dan profesionalisme.",
+                    "aboutCard1Text2": "Misi kami adalah untuk menyediakan pelanggan dengan penyelesaian kewangan yang paling sesuai. Tidak kira apa jua keadaan pasaran, kami adalah sokongan padu anda.",
+                    "aboutCard2Title": "Jaminan Keyakinan & Kisah Kejayaan",
+                    "aboutCard2Text1": "Asas kejayaan kami datang dari kepercayaan pelanggan. Kami telah membantu beribu-ribu pelanggan mengatasi kesukaran kewangan dan mencapai matlamat peribadi serta perniagaan.",
+                    "aboutCard2Li1": "<strong>98%</strong> Kepuasan Pelanggan",
+                    "aboutCard2Li2": "<strong>Kelulusan Pantas</strong>: Dalam kes sebenar, dana dikeluarkan sepantas 2 jam",
+                    "aboutCard2Li3": "<strong>Syarat Telus</strong>: Tiada yuran tersembunyi, memberi anda keyakinan penuh",
+                    "servicesTitle": "Perkhidmatan Pinjaman Kami",
+                    "service1Title": "Pinjaman Peribadi",
+                    "service1Desc": "Ini adalah cara yang cepat dan mudah untuk mendapatkan pinjaman dan wang tunai segera pada kadar faedah yang rendah.",
+                    "service2Title": "Pinjaman Perniagaan",
+                    "service2Desc": "Adakah syarikat anda memerlukan lebih banyak wang untuk mengembangkan perniagaan anda atau membayar perbelanjaan? Dan bank tidak dapat meluluskan pinjaman anda? Jangan risau, kami di sini untuk membantu anda dengan penyelesaian pinjaman perniagaan kecil dalam talian kami!",
+                    "service3Title": "Pinjaman Kecemasan",
+                    "service3Desc": "Pinjaman kecemasan boleh membantu anda membayar perbelanjaan yang mendesak dan perlu. Ia jauh lebih murah dan selamat daripada jenis pinjaman lain, seperti pinjaman hari gaji atau pinjaman hak milik kereta. Ia boleh menjadi sama mudah dan cepat.",
+                    "whyUsTitle": "Kenapa Pilih Kami?",
+                    "whyUsIntro": "Tidak kira betapa buruknya keadaan anda, LYX Finance Partners bersedia menghulurkan bantuan. Mohon pinjaman peribadi daripada kami hari ini dan dapatkan kelulusan pinjaman anda dalam masa 2 jam!",
+                    "feature1Title": "Kadar Faedah Terendah",
+                    "feature1Desc": "Kadar faedah yang rendah boleh mengurangkan bayaran gadai janji bulanan anda.",
+                    "feature2Title": "Bayaran Balik Fleksibel",
+                    "feature2Desc": "LYX Finance Partners memberi anda fleksibiliti untuk melanjutkan tempoh bayaran balik anda sehingga 72 bulan.",
+                    "feature3Title": "Permohonan Mudah & Cepat",
+                    "feature3Desc": "Kami berhasrat untuk menyediakan pelanggan kami dengan proses permohonan yang cepat dan mudah.",
+                    "feature4Title": "Pengalaman Profesional",
+                    "feature4Desc": "Kami memberi nasihat profesional kepada pelanggan kami dan membimbing mereka dalam mendapatkan pinjaman yang betul.",
+                    "feature5Title": "Permohonan Dalam Talian 24 Jam",
+                    "feature5Desc": "Hanya tinggalkan maklumat anda dalam borang permohonan, dan kami akan menghubungi anda tidak lama lagi.",
+                    "applyTitle": "Bagaimana untuk Memohon?",
+                    "step1Title": "Langkah 1",
+                    "step1Desc": "Sila isi borang atau hantar mesej WeChat kepada kami.",
+                    "step2Title": "Langkah 2",
+                    "step2Desc": "Penyelesaian",
+                    "step3Title": "Langkah 3",
+                    "step3Desc": "Terima Dana",
+                    "formTitle": "Borang Permohonan Pinjaman",
+                    "formNameLabel": "Nama Penuh",
+                    "formNamePlaceholder": "Masukkan nama penuh anda",
+                    "formPhoneLabel": "Nombor Telefon",
+                    "formPhonePlaceholder": "Masukkan nombor telefon anda",
+                    "formEmailLabel": "E-mel",
+                    "formEmailPlaceholder": "Masukkan e-mel anda",
+                    "formAmountLabel": "Jumlah Pinjaman (RM)",
+                    "formAmountPlaceholder": "5000 - 100000",
+                    "formTermLabel": "Tempoh Pinjaman (Bulan)",
+                    "formTermSelect": "Pilih tempoh pinjaman",
+                    "formTerm6": "6 Bulan",
+                    "formTerm12": "12 Bulan",
+                    "formTerm24": "24 Bulan",
+                    "formTerm36": "36 Bulan",
+                    "formTerm48": "48 Bulan",
+                    "formTerm60": "60 Bulan",
+                    "formTerm72": "72 Bulan",
+                    "formPurposeLabel": "Tujuan Pinjaman",
+                    "formPurposePlaceholder": "Masukkan tujuan pinjaman (pilihan)",
+                    "formSubmitBtn": "Hantar Permohonan",
+                    "ratesTitle": "Pengiraan Kadar Faedah",
+                    "ratesDesc1": "Maklumat Pinjaman: Kadar faedah tahunan adalah antara 4% hingga 10%*. Tempoh pinjaman adalah antara 6 bulan hingga 72 bulan.",
+                    "ratesDesc2": "Sebagai contoh, pinjaman RM 2,000 selama 1 tahun dengan kadar faedah bulanan 0.8% akan mempunyai jumlah bayaran balik sebanyak RM 2,192. Tiada yuran berkaitan atau tersembunyi.",
+                    "ratesDesc3": "<em>Maklumat ini bertujuan untuk menggambarkan terma pinjaman am yang ditawarkan oleh syarikat-syarikat Malaysia. Tertakluk kepada terma dan syarat.</em>",
+                    "contactTitle": "Hubungi Kami",
+                    "contactIntro": "Kami di sini untuk membantu setiap perniagaan dan individu. Hanya hantar butiran anda, dan kami akan menghubungi anda tidak lama lagi. Anda juga boleh menghantar mesej WeChat kepada kami untuk sebarang pertanyaan lanjut.",
+                    "contactButton": "Mohon Sekarang",
+                    "contactNote": "Kami akan menghubungi anda dalam masa 24 jam.",
+                    "footerRights": "&copy; 2025 LYX Finance Partners. Hak cipta terpelihara."
+                }
+            };
+
+            // 2. 切换语言的函数
+            function changeLanguage(lang) {
+                if (!translations[lang]) {
+                    console.error("Language not found: " + lang);
+                    return;
+                }
+
+                const langData = translations[lang];
+
+                // 设置页面语言和标题
+                document.documentElement.lang = lang;
+                document.title = langData.title;
+
+                // 更新所有带 data-lang-key (用于 innerHTML) 的元素
+                document.querySelectorAll('[data-lang-key]').forEach(el => {
+                    const key = el.dataset.langKey;
+                    if (langData[key] !== undefined) {
+                        el.innerHTML = langData[key]; // 使用 innerHTML 来支持 <strong> 等标签
+                    }
+                });
+
+                // 更新所有带 data-lang-key-placeholder (用于 placeholder) 的元素
+                document.querySelectorAll('[data-lang-key-placeholder]').forEach(el => {
+                    const key = el.dataset.langKeyPlaceholder;
+                    if (langData[key] !== undefined) {
+                        el.placeholder = langData[key];
+                    }
+                });
+
+                // 更新按钮的 "active" 状态
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('lang') === lang);
+                });
+
+                // 保存用户的偏好到 localStorage
+                localStorage.setItem('preferredLanguage', lang);
+            }
+
+            // 3. 为语言切换按钮添加点击事件
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lang = e.target.getAttribute('lang');
+                    changeLanguage(lang);
+                });
+            });
+
+            // 4. 页面加载时，检查 localStorage 中是否有保存的语言偏好
+            // 优先使用 localStorage, 其次检查浏览器语言, 默认 'zh'
+            let defaultLang = 'zh';
+            const savedLang = localStorage.getItem('preferredLanguage');
+            
+            if (savedLang) {
+                defaultLang = savedLang;
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang.startsWith('en')) defaultLang = 'en';
+                else if (browserLang.startsWith('ms')) defaultLang = 'ms';
+                // 否则保持 'zh'
+            }
+
+            changeLanguage(defaultLang);
+            
+            // ===========================================
+            // === 新增：多语言切换逻辑 (END) ===
+            // ===========================================
+
+
+            // --- 1. 滚动动画 (原始代码) ---
+            const targets = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, {
+                root: null, 
+                threshold: 0.1 
+            });
+
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+
+
+            // --- 2. 统一绑定事件监听器 (原始代码) ---
+            
+            // 绑定所有 "立即申请" 按钮 (通过 class="js-apply-now")
+            const applyButtons = document.querySelectorAll('.js-apply-now');
+            applyButtons.forEach(button => {
+                button.addEventListener('click', applyNow);
+            });
+
+            // 绑定表单提交 (通过 id="loanApplicationForm")
+            const loanForm = document.getElementById('loanApplicationForm');
+            if (loanForm) {
+                loanForm.addEventListener('submit', submitForm);
+            }
+        });
+    </script>
+</body>
+</html>
