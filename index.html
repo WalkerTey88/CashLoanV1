@@ -3,652 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LYX Finance Partners – 贷款申请表</title>
+    <title>LYX Finance Partners – 您的最佳财务伙伴</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        :root {
-            --color-primary: #00a16e;
-            --color-primary-light: #00c689;
-            --color-text: #34495e;
-            --color-text-light: #bdc3c7;
-            --color-bg-dark: #2c3e50;
-            --color-bg-light: #ffffff;
-            --color-bg-grey: #f8f9fa;
-            --color-border: #e0e6ed;
-            --color-error: #e74c3c;
-            --color-success: #2ecc71;
-
-            --font-family-base: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
-            --line-height-base: 1.7;
-
-            --border-radius-s: 8px;
-            --border-radius-m: 12px;
-            --border-radius-l: 30px;
-
-            --shadow-card: 0 8px 25px rgba(0,0,0,0.07);
-            --shadow-card-hover: 0 12px 30px rgba(0,0,0,0.10);
-            --shadow-hero: 0 10px 30px rgba(0,0,0,0.08);
-            --shadow-button: 0 6px 20px rgba(0, 198, 137, 0.40);
-            --shadow-button-hover: 0 10px 25px rgba(0, 198, 137, 0.50);
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-family-base);
-            margin: 0;
-            padding: 0;
-            line-height: var(--line-height-base);
-            color: var(--color-text);
-            background-color: var(--color-bg-grey);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .form-container {
-            background: var(--color-bg-light);
-            border-radius: var(--border-radius-m);
-            box-shadow: var(--shadow-hero);
-            padding: 40px;
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            color: var(--color-primary);
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius-s);
-            font-family: var(--font-family-base);
-            font-size: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--color-primary);
-            box-shadow: 0 0 0 3px rgba(0, 161, 110, 0.1);
-        }
-
-        .form-row {
-            display: flex;
-            gap: 20px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
-            color: white;
-            padding: 14px 35px;
-            border: none;
-            border-radius: var(--border-radius-l);
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            box-shadow: var(--shadow-button);
-            text-decoration: none;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: var(--shadow-button-hover);
-        }
-
-        .btn:disabled {
-            background: var(--color-text-light);
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .error-message {
-            color: var(--color-error);
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .success-message {
-            color: var(--color-success);
-            text-align: center;
-            margin-top: 20px;
-            display: none;
-        }
-
-        .privacy-notice {
-            font-size: 14px;
-            color: var(--color-text-light);
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: var(--border-radius-m);
-            max-width: 500px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .modal-buttons button {
-            flex: 1;
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            .form-container {
-                padding: 20px;
-            }
-            
-            h2 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
 </head>
+
 <body>
-    <div class="form-container">
-        <h2 data-lang-key="formTitle">贷款申请表</h2>
-        
-        <form id="loanForm">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="fullName" data-lang-key="formFullName">全名</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                    <div class="error-message" id="fullNameError" data-lang-key="formFullNameError">请输入您的全名</div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone" data-lang-key="formPhone">手机号码</label>
-                    <input type="tel" id="phone" name="phone" required>
-                    <div class="error-message" id="phoneError" data-lang-key="formPhoneError">请输入有效的手机号码</div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="email" data-lang-key="formEmail">电子邮件</label>
-                <input type="email" id="email" name="email">
-                <div class="error-message" id="emailError" data-lang-key="formEmailError">请输入有效的电子邮件地址</div>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="loanType" data-lang-key="formLoanType">贷款类型</label>
-                    <select id="loanType" name="loanType" required>
-                        <option value="" data-lang-key="formSelectOption">请选择</option>
-                        <option value="personal" data-lang-key="service1Title">个人贷款</option>
-                        <option value="business" data-lang-key="service2Title">商业贷款</option>
-                        <option value="emergency" data-lang-key="service3Title">紧急贷款</option>
-                    </select>
-                    <div class="error-message" id="loanTypeError" data-lang-key="formLoanTypeError">请选择贷款类型</div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="loanAmount" data-lang-key="formLoanAmount">贷款金额 (RM)</label>
-                    <select id="loanAmount" name="loanAmount" required>
-                        <option value="" data-lang-key="formSelectOption">请选择</option>
-                        <option value="5000-10000">5,000 - 10,000</option>
-                        <option value="10000-25000">10,000 - 25,000</option>
-                        <option value="25000-50000">25,000 - 50,000</option>
-                        <option value="50000-100000">50,000 - 100,000</option>
-                    </select>
-                    <div class="error-message" id="loanAmountError" data-lang-key="formLoanAmountError">请选择贷款金额</div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="purpose" data-lang-key="formPurpose">贷款用途</label>
-                <textarea id="purpose" name="purpose" rows="3" required></textarea>
-                <div class="error-message" id="purposeError" data-lang-key="formPurposeError">请描述您的贷款用途</div>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="employment" data-lang-key="formEmployment">就业状况</label>
-                    <select id="employment" name="employment" required>
-                        <option value="" data-lang-key="formSelectOption">请选择</option>
-                        <option value="employed" data-lang-key="formEmployed">受雇</option>
-                        <option value="self-employed" data-lang-key="formSelfEmployed">自雇</option>
-                        <option value="unemployed" data-lang-key="formUnemployed">待业</option>
-                    </select>
-                    <div class="error-message" id="employmentError" data-lang-key="formEmploymentError">请选择就业状况</div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="monthlyIncome" data-lang-key="formMonthlyIncome">月收入 (RM)</label>
-                    <select id="monthlyIncome" name="monthlyIncome" required>
-                        <option value="" data-lang-key="formSelectOption">请选择</option>
-                        <option value="0-2000">0 - 2,000</option>
-                        <option value="2000-5000">2,000 - 5,000</option>
-                        <option value="5000-10000">5,000 - 10,000</option>
-                        <option value="10000+">10,000+</option>
-                    </select>
-                    <div class="error-message" id="monthlyIncomeError" data-lang-key="formMonthlyIncomeError">请选择月收入范围</div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label>
-                    <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
-                    <span data-lang-key="formPrivacyConsent">我同意 LYX Finance Partners 根据其隐私政策收集和处理我的个人信息</span>
-                </label>
-                <div class="error-message" id="privacyConsentError" data-lang-key="formPrivacyConsentError">您必须同意隐私政策才能提交申请</div>
-            </div>
-            
-            <button type="submit" class="btn" id="submitBtn" data-lang-key="formSubmit">提交申请</button>
-            
-            <div class="success-message" id="successMessage" data-lang-key="formSuccessMessage">
-                感谢您提交申请！我们的团队将很快与您联系。
-            </div>
-        </form>
-        
-        <div class="privacy-notice" data-lang-key="formPrivacyNotice">
-            我们承诺保护您的隐私。您的信息将仅用于处理您的贷款申请。
+    <header>
+        <div class="lang-switcher">
+            <button type="button" class="lang-btn active" lang="zh">中文</button>
+            <button type="button" class="lang-btn" lang="en">EN</button>
+            <button type="button" class="lang-btn" lang="ms">BM</button>
         </div>
-    </div>
+
+        <nav>
+            <a href="#home" data-lang-key="navHome">首页</a>
+            <a href="#about" data-lang-key="navAbout">关于我们</a>
+            <a href="#services" data-lang-key="navServices">服务</a>
+            <a href="#why-us" data-lang-key="navWhyUs">为什么选择我们</a>
+            <a href="#apply" data-lang-key="navApply">申请</a>
+            <a href="#contact" data-lang-key="navContact">联系</a>
+        </nav>
+    </header>
     
-    <!-- 隐私政策模态框 -->
-    <div class="modal" id="privacyModal">
-        <div class="modal-content">
-            <h3 data-lang-key="privacyModalTitle">隐私政策</h3>
-            <div data-lang-key="privacyModalContent">
-                <p>LYX Finance Partners 尊重并保护您的隐私。我们收集的个人信息将仅用于：</p>
-                <ul>
-                    <li>处理您的贷款申请</li>
-                    <li>评估您的信用状况</li>
-                    <li>与您沟通贷款相关事宜</li>
-                    <li>遵守法律法规要求</li>
-                </ul>
-                <p>我们不会在未经您同意的情况下将您的信息分享给第三方，除非法律要求或为处理您的贷款申请所必需。</p>
-                <p>您有权访问、更正或要求删除您的个人信息。如需了解更多信息，请联系我们。</p>
+    <main>
+        <!-- HERO -->
+        <section id="home" class="hero">
+            <h2 data-lang-key="heroTitle">今天申请，今天通过!</h2>
+            <p data-lang-key="heroSubtitle1">快速 & 许可</p>
+            <p data-lang-key="heroSubtitle2">LYX Finance Partners 提供安全、许可的个人贷款。现在申请，只需 2 小时即可获得 5,000 – 100,000 元的贷款！</p>
+            
+            <button class="btn js-apply-now" data-lang-key="heroButton">立即申请 (可线上或线下)</button>
+        </section>
+
+        <!-- 关于我们 -->
+        <section id="about" class="animate-on-scroll slide-in-up">
+            <h2 data-lang-key="aboutTitle">关于 LYX Finance Partners – 建立信任的基石</h2>
+            <p data-lang-key="aboutIntro">
+                我们不仅仅是贷款提供者，更是您值得信赖的财务伙伴。我们致力于提供透明、可靠且以客户为中心的服务，帮助您实现财务目标。
+            </p>
+
+            <!-- 已替换 Imgur 链接 -->
+            <img loading="lazy" src="https://i.imgur.com/V5Hz92G.png" alt="财务顾问与客户会议" class="section-image animate-on-scroll slide-in-up">
+
+            <div class="about-container">
+
+                <div class="about-card card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h3 data-lang-key="aboutCard1Title">公司历史与承诺</h3>
+                    <p data-lang-key="aboutCard1Text1">
+                        <strong>2001年开创</strong>，LYX Finance Partners 拥有超过二十年的行业经验。我们见证了市场的变迁，始终坚守诚信和专业的原则。
+                    </p>
+                    <p data-lang-key="aboutCard1Text2">
+                        我们的使命是为客户提供最合适的财务解决方案，无论市场环境如何，我们都是您坚实的后盾。
+                    </p>
+                </div>
+
+                <div class="about-card card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3 data-lang-key="aboutCard2Title">信心保证与成功案例</h3>
+                    <p data-lang-key="aboutCard2Text1">我们成功的基石源于客户的信任。我们已帮助数以千计的客户渡过财务难关，实现目标。</p>
+                    <ul style="padding-left: 20px; text-align: left;">
+                        <li data-lang-key="aboutCard2Li1"><strong>98%</strong> 客户满意度</li>
+                        <li data-lang-key="aboutCard2Li2"><strong>快速审批</strong> 最快 2 小时放款</li>
+                        <li data-lang-key="aboutCard2Li3"><strong>透明条款</strong> 无隐藏费用</li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="modal-buttons">
-                <button class="btn" id="acceptPrivacy" data-lang-key="privacyModalAccept">接受</button>
-                <button class="btn" id="closePrivacy" data-lang-key="privacyModalClose" style="background: var(--color-text-light);">关闭</button>
+        </section>
+
+        <!-- 服务 -->
+        <section id="services" class="animate-on-scroll slide-in-up">
+            <h2 data-lang-key="servicesTitle">我们的贷款服务</h2>
+            <div class="services">
+
+                <div class="service card-base animate-on-scroll slide-in-up">
+                    <!-- 已替换 Imgur 链接 -->
+                    <img loading="lazy" src="https://i.imgur.com/o8mRl9x.jpeg" alt="个人贷款" class="service-image">
+                    <h3 data-lang-key="service1Title">个人贷款</h3>
+                    <p data-lang-key="service1Desc">快速现金、低利率。</p>
+                </div>
+
+                <div class="service card-base animate-on-scroll slide-in-up">
+                    <!-- 已替换 Imgur 链接 -->
+                    <img loading="lazy" src="https://i.imgur.com/ZIhxRhh.png" alt="商业贷款" class="service-image">
+                    <h3 data-lang-key="service2Title">商业贷款</h3>
+                    <p data-lang-key="service2Desc">企业资金周转、业务扩展解决方案。</p>
+                </div>
+
+                <div class="service card-base animate-on-scroll slide-in-up">
+                    <!-- 已替换 Imgur 链接 -->
+                    <img loading="lazy" src="https://i.imgur.com/h2fixQH.jpeg" alt="紧急贷款" class="service-image">
+                    <h3 data-lang-key="service3Title">紧急贷款</h3>
+                    <p data-lang-key="service3Desc">紧急费用快速解决。</p>
+                </div>
+
             </div>
+        </section>
+
+        <!-- WHY US -->
+        <section id="why-us" class="animate-on-scroll slide-in-up">
+            <h2 data-lang-key="whyUsTitle">为什么选择我们？</h2>
+            <p style="text-align:center; max-width: 800px; margin: 0 auto 30px auto;" data-lang-key="whyUsIntro">
+                无论你的情况有多糟，我们都愿意向你伸出援手。
+            </p>
+
+            <div class="why-choose">
+                <div class="feature card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-percent"></i>
+                    <h3 data-lang-key="feature1Title">最低利率</h3>
+                    <p data-lang-key="feature1Desc">低利率可以减少您每月的抵押贷款付款。</p>
+                </div>
+
+                <div class="feature card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-sliders"></i>
+                    <h3 data-lang-key="feature2Title">灵活还款</h3>
+                    <p data-lang-key="feature2Desc">LYX Finance Partners让您可以灵活地将您的还款期延长至72个月。</p>
+                </div>
+
+                <div class="feature card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3 data-lang-key="feature3Title">简单和快速的申请</h3>
+                    <p data-lang-key="feature3Desc">我们的目标是为我们的客户提供一个快速和简单的申请过程。</p>
+                </div>
+
+                <div class="feature card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <h3 data-lang-key="feature4Title">专业经验</h3>
+                    <p data-lang-key="feature4Desc">我们为客户提供专业建议，并指导他们获得合适的贷款。</p>
+                </div>
+
+                <div class="feature card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3 data-lang-key="feature5Title">24小时在线申请</h3>
+                    <p data-lang-key="feature5Desc">只需在申请表中留下您的信息，我们将很快与您联系。</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- APPLY -->
+        <section id="apply">
+            <h2 class="animate-on-scroll slide-in-up" data-lang-key="applyTitle">如何申请？</h2>
+
+            <div class="steps">
+                <div class="step card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <h3 data-lang-key="step1Title">步骤 1</h3>
+                    <p data-lang-key="step1Desc">请填写表格或发微信给我们。</p>
+                </div>
+
+                <div class="step card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-comments-dollar"></i>
+                    <h3 data-lang-key="step2Title">步骤 2</h3>
+                    <p data-lang-key="step2Desc">解决方案</p>
+                </div>
+
+                <div class="step card-base animate-on-scroll slide-in-up">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h3 data-lang-key="step3Title">步骤 3</h3>
+                    <p data-lang-key="step3Desc">收到资金</p>
+                </div>
+            </div>
+
+            <div class="form-container animate-on-scroll slide-in-up">
+                <h2 data-lang-key="formTitle">贷款申请表</h2>
+                <form id="loanApplicationForm">
+                    <div class="form-group">
+                        <label for="fullName" data-lang-key="formNameLabel">姓名</label>
+                        <input type="text" id="fullName" name="fullName" required data-lang-key-placeholder="formNamePlaceholder" placeholder="请输入您的姓名">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-lang-key="formPhoneLabel">电话号码</label>
+                        <input type="tel" id="phone" name="phone" required data-lang-key-placeholder="formPhonePlaceholder" placeholder="请输入您的电话号码">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-lang-key="formEmailLabel">电子邮件</label>
+                        <input type="email" id="email" name="email" required data-lang-key-placeholder="formEmailPlaceholder" placeholder="请输入您的电子邮件">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanAmount" data-lang-key="formAmountLabel">贷款金额（元）</label>
+                        <input type="number" id="loanAmount" name="loanAmount" required min="5000" max="100000" data-lang-key-placeholder="formAmountPlaceholder" placeholder="5000 - 100000">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTerm" data-lang-key="formTermLabel">贷款期限（月）</label>
+                        <select id="loanTerm" name="loanTerm" required>
+                            <option value="" disabled selected data-lang-key="formTermSelect">请选择贷款期限</option>
+                            <option value="6" data-lang-key="formTerm6">6 个月</option>
+                            <option value="12" data-lang-key="formTerm12">12 个月</option>
+                            <option value="24" data-lang-key="formTerm24">24 个月</option>
+                            <option value="36" data-lang-key="formTerm36">36 个月</option>
+                            <option value="48" data-lang-key="formTerm48">48 个月</option>
+                            <option value="60" data-lang-key="formTerm60">60 个月</option>
+                            <option value="72" data-lang-key="formTerm72">72 个月</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanPurpose" data-lang-key="formPurposeLabel">贷款用途</label>
+                        <input type="text" id="loanPurpose" name="loanPurpose" data-lang-key-placeholder="formPurposePlaceholder" placeholder="请输入贷款用途（可选）">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn" data-lang-key="formSubmitBtn">提交申请</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="animate-on-scroll slide-in-up" style="margin-top: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h2 data-lang-key="ratesTitle">利率的算法</h2>
+                <p data-lang-key="ratesDesc1">贷款信息：年利率介于 4% 至 10%* 之间。贷款期限在 6 个月至 72 个月之间。</p>
+                <p data-lang-key="ratesDesc2">例如，一笔为期 1 年、月利率为 0.8% 的 2,000 元贷款，总还款额为 2,192 元。没有相关费用和隐藏费用。</p>
+                <p><em data-lang-key="ratesDesc3">此信息旨在说明马来西亚公司提供的一般贷款条款。条款和条件适用。</em></p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="animate-on-scroll slide-in-up">
+            <h2 data-lang-key="contactTitle">与我们取得联系</h2>
+
+            <!-- 已替换 Imgur 链接 -->
+            <img loading="lazy" src="https://i.imgur.com/dvY7oXn.png" alt="友好的客服" class="section-image animate-on-scroll slide-in-up">
+
+            <button class="btn js-apply-now" data-lang-key="contactButton">立即申请</button>
+            <p style="margin-top: 15px;" data-lang-key="contactNote">我们将在24小时内与您联系。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p data-lang-key="footerRights">&copy; 2025 LYX Finance Partners. All rights reserved.</p>
+        <div class="footer-legal">
+            License No: WL7835/14/01-2/030529<br>
+            SSM: 200103179192 (JR0176656-H)
         </div>
-    </div>
+    </footer>
 
-    <script>
-        // 多语言支持
-        const translations = {
-            zh: {
-                formTitle: "贷款申请表",
-                formFullName: "全名",
-                formPhone: "手机号码",
-                formEmail: "电子邮件",
-                formLoanType: "贷款类型",
-                formLoanAmount: "贷款金额 (RM)",
-                formPurpose: "贷款用途",
-                formEmployment: "就业状况",
-                formMonthlyIncome: "月收入 (RM)",
-                formPrivacyConsent: "我同意 LYX Finance Partners 根据其隐私政策收集和处理我的个人信息",
-                formSubmit: "提交申请",
-                formSuccessMessage: "感谢您提交申请！我们的团队将很快与您联系。",
-                formPrivacyNotice: "我们承诺保护您的隐私。您的信息将仅用于处理您的贷款申请。",
-                formFullNameError: "请输入您的全名",
-                formPhoneError: "请输入有效的手机号码",
-                formEmailError: "请输入有效的电子邮件地址",
-                formLoanTypeError: "请选择贷款类型",
-                formLoanAmountError: "请选择贷款金额",
-                formPurposeError: "请描述您的贷款用途",
-                formEmploymentError: "请选择就业状况",
-                formMonthlyIncomeError: "请选择月收入范围",
-                formPrivacyConsentError: "您必须同意隐私政策才能提交申请",
-                formSelectOption: "请选择",
-                formEmployed: "受雇",
-                formSelfEmployed: "自雇",
-                formUnemployed: "待业",
-                privacyModalTitle: "隐私政策",
-                privacyModalContent: `
-                    <p>LYX Finance Partners 尊重并保护您的隐私。我们收集的个人信息将仅用于：</p>
-                    <ul>
-                        <li>处理您的贷款申请</li>
-                        <li>评估您的信用状况</li>
-                        <li>与您沟通贷款相关事宜</li>
-                        <li>遵守法律法规要求</li>
-                    </ul>
-                    <p>我们不会在未经您同意的情况下将您的信息分享给第三方，除非法律要求或为处理您的贷款申请所必需。</p>
-                    <p>您有权访问、更正或要求删除您的个人信息。如需了解更多信息，请联系我们。</p>
-                `,
-                privacyModalAccept: "接受",
-                privacyModalClose: "关闭",
-                service1Title: "个人贷款",
-                service2Title: "商业贷款",
-                service3Title: "紧急贷款"
-            },
-            en: {
-                formTitle: "Loan Application Form",
-                formFullName: "Full Name",
-                formPhone: "Phone Number",
-                formEmail: "Email",
-                formLoanType: "Loan Type",
-                formLoanAmount: "Loan Amount (RM)",
-                formPurpose: "Loan Purpose",
-                formEmployment: "Employment Status",
-                formMonthlyIncome: "Monthly Income (RM)",
-                formPrivacyConsent: "I agree to LYX Finance Partners collecting and processing my personal information according to its privacy policy",
-                formSubmit: "Submit Application",
-                formSuccessMessage: "Thank you for your application! Our team will contact you shortly.",
-                formPrivacyNotice: "We are committed to protecting your privacy. Your information will only be used to process your loan application.",
-                formFullNameError: "Please enter your full name",
-                formPhoneError: "Please enter a valid phone number",
-                formEmailError: "Please enter a valid email address",
-                formLoanTypeError: "Please select a loan type",
-                formLoanAmountError: "Please select a loan amount",
-                formPurposeError: "Please describe your loan purpose",
-                formEmploymentError: "Please select employment status",
-                formMonthlyIncomeError: "Please select monthly income range",
-                formPrivacyConsentError: "You must agree to the privacy policy to submit your application",
-                formSelectOption: "Please select",
-                formEmployed: "Employed",
-                formSelfEmployed: "Self-Employed",
-                formUnemployed: "Unemployed",
-                privacyModalTitle: "Privacy Policy",
-                privacyModalContent: `
-                    <p>LYX Finance Partners respects and protects your privacy. The personal information we collect will only be used for:</p>
-                    <ul>
-                        <li>Processing your loan application</li>
-                        <li>Assessing your creditworthiness</li>
-                        <li>Communicating with you about your loan</li>
-                        <li>Complying with legal requirements</li>
-                    </ul>
-                    <p>We will not share your information with third parties without your consent, unless required by law or necessary to process your loan application.</p>
-                    <p>You have the right to access, correct, or request deletion of your personal information. For more information, please contact us.</p>
-                `,
-                privacyModalAccept: "Accept",
-                privacyModalClose: "Close",
-                service1Title: "Personal Loan",
-                service2Title: "Business Loan",
-                service3Title: "Emergency Loan"
-            },
-            ms: {
-                formTitle: "Borang Permohonan Pinjaman",
-                formFullName: "Nama Penuh",
-                formPhone: "Nombor Telefon",
-                formEmail: "E-mel",
-                formLoanType: "Jenis Pinjaman",
-                formLoanAmount: "Jumlah Pinjaman (RM)",
-                formPurpose: "Tujuan Pinjaman",
-                formEmployment: "Status Pekerjaan",
-                formMonthlyIncome: "Pendapatan Bulanan (RM)",
-                formPrivacyConsent: "Saya bersetuju LYX Finance Partners mengumpul dan memproses maklumat peribadi saya mengikut dasar privasi",
-                formSubmit: "Hantar Permohonan",
-                formSuccessMessage: "Terima kasih atas permohonan anda! Pasukan kami akan menghubungi anda tidak lama lagi.",
-                formPrivacyNotice: "Kami komited untuk melindungi privasi anda. Maklumat anda hanya akan digunakan untuk memproses permohonan pinjaman anda.",
-                formFullNameError: "Sila masukkan nama penuh anda",
-                formPhoneError: "Sila masukkan nombor telefon yang sah",
-                formEmailError: "Sila masukkan alamat e-mel yang sah",
-                formLoanTypeError: "Sila pilih jenis pinjaman",
-                formLoanAmountError: "Sila pilih jumlah pinjaman",
-                formPurposeError: "Sila terangkan tujuan pinjaman anda",
-                formEmploymentError: "Sila pilih status pekerjaan",
-                formMonthlyIncomeError: "Sila pilih julat pendapatan bulanan",
-                formPrivacyConsentError: "Anda mesti bersetuju dengan dasar privasi untuk menghantar permohonan",
-                formSelectOption: "Sila pilih",
-                formEmployed: "Bekerja",
-                formSelfEmployed: "Bekerja Sendiri",
-                formUnemployed: "Menganggur",
-                privacyModalTitle: "Dasar Privasi",
-                privacyModalContent: `
-                    <p>LYX Finance Partners menghormati dan melindungi privasi anda. Maklumat peribadi yang kami kumpul hanya akan digunakan untuk:</p>
-                    <ul>
-                        <li>Memproses permohonan pinjaman anda</li>
-                        <li>Menilai kelayakan kredit anda</li>
-                        <li>Berhubung dengan anda mengenai pinjaman anda</li>
-                        <li>Mematuhi keperluan undang-undang</li>
-                    </ul>
-                    <p>Kami tidak akan berkongsi maklumat anda dengan pihak ketiga tanpa persetujuan anda, kecuali jika diperlukan oleh undang-undang atau perlu untuk memproses permohonan pinjaman anda.</p>
-                    <p>Anda berhak untuk mengakses, membetulkan, atau meminta penghapusan maklumat peribadi anda. Untuk maklumat lanjut, sila hubungi kami.</p>
-                `,
-                privacyModalAccept: "Terima",
-                privacyModalClose: "Tutup",
-                service1Title: "Pinjaman Peribadi",
-                service2Title: "Pinjaman Perniagaan",
-                service3Title: "Pinjaman Kecemasan"
-            }
-        };
-
-        // 当前语言
-        let currentLang = 'zh';
-
-        // 应用语言
-        function applyLanguage(lang) {
-            const dict = translations[lang];
-            
-            document.querySelectorAll('[data-lang-key]').forEach(el => {
-                const key = el.getAttribute('data-lang-key');
-                if (dict[key]) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = dict[key];
-                    } else if (el.tagName === 'OPTION') {
-                        el.textContent = dict[key];
-                    } else {
-                        el.innerHTML = dict[key];
-                    }
-                }
-            });
-        }
-
-        // 表单验证和提交
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('loanForm');
-            const privacyModal = document.getElementById('privacyModal');
-            const privacyConsent = document.getElementById('privacyConsent');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            // 显示隐私政策模态框
-            privacyConsent.addEventListener('click', function() {
-                if (this.checked) {
-                    privacyModal.style.display = 'flex';
-                }
-            });
-            
-            // 接受隐私政策
-            document.getElementById('acceptPrivacy').addEventListener('click', function() {
-                privacyModal.style.display = 'none';
-            });
-            
-            // 关闭隐私政策
-            document.getElementById('closePrivacy').addEventListener('click', function() {
-                privacyModal.style.display = 'none';
-                privacyConsent.checked = false;
-            });
-            
-            // 表单验证
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                if (validateForm()) {
-                    // 禁用提交按钮
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = '处理中...';
-                    
-                    // 模拟表单提交
-                    setTimeout(function() {
-                        // 显示成功消息
-                        document.getElementById('successMessage').style.display = 'block';
-                        
-                        // 准备 WhatsApp 消息
-                        const formData = new FormData(form);
-                        const message = formatWhatsAppMessage(formData);
-                        
-                        // 重定向到 WhatsApp
-                        setTimeout(function() {
-                            const whatsappNumber = "60122847784";
-                            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-                            window.location.href = url;
-                        }, 1500);
-                    }, 1000);
-                }
-            });
-            
-            // 实时验证
-            const inputs = form.querySelectorAll('input, select, textarea');
-            inputs.forEach(input => {
-                input.addEventListener('blur', function() {
-                    validateField(this);
-                });
-                
-                input.addEventListener('input', function() {
-                    hideError(this);
-                });
-            });
-        });
-        
-        // 验证单个字段
-        function validateField(field) {
-            const value = field.value.trim();
-            const errorElement = document.getElementById(field.id + 'Error');
-            
-            if (field.hasAttribute('required') && !value) {
-                showError(field, errorElement);
-                return false;
-            }
-            
-            if (field.type === 'email' && value && !isValidEmail(value)) {
-                showError(field, errorElement);
-                return false;
-            }
-            
-            if (field.type === 'tel' && value && !isValidPhone(value)) {
-                showError(field, errorElement);
-                return false;
-            }
-            
-            hideError(field);
-            return true;
-        }
-        
-        // 验证整个表单
-        function validateForm() {
-            const fields = document.querySelectorAll('#loanForm input, #loanForm select, #loanForm textarea');
-            let isValid = true;
-            
-            fields.forEach(field => {
-                if (!validateField(field)) {
-                    isValid = false;
-                }
-            });
-            
-            return isValid;
-        }
-        
-        // 显示错误
-        function showError(field, errorElement) {
-            field.style.borderColor = 'var(--color-error)';
-            errorElement.style.display = 'block';
-        }
-        
-        // 隐藏错误
-        function hideError(field) {
-            field.style.borderColor = 'var(--color-border)';
-            const errorElement = document.getElementById(field.id + 'Error');
-            if (errorElement) {
-                errorElement.style.display = 'none';
-            }
-        }
-        
-        // 验证电子邮件
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-        
-        // 验证手机号码
-        function isValidPhone(phone) {
-            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-            return phoneRegex.test(phone.replace(/\s/g, ''));
-        }
-        
-        // 格式化 WhatsApp 消息
-        function formatWhatsAppMessage(formData) {
-            const loanTypeMap = {
-                'personal': translations[currentLang].service1Title,
-                'business': translations[currentLang].service2Title,
-                'emergency': translations[currentLang].service3Title
-            };
-            
-            const employmentMap = {
-                'employed': translations[currentLang].formEmployed,
-                'self-employed': translations[currentLang].formSelfEmployed,
-                'unemployed': translations[currentLang].formUnemployed
-            };
-            
-            let message = `*贷款申请详情*%0A%0A`;
-            message += `*姓名:* ${formData.get('fullName')}%0A`;
-            message += `*电话:* ${formData.get('phone')}%0A`;
-            
-            if (formData.get('email')) {
-                message += `*邮箱:* ${formData.get('email')}%0A`;
-            }
-            
-            message += `*贷款类型:* ${loanTypeMap[formData.get('loanType')]}%0A`;
-            message += `*贷款金额:* RM ${formData.get('loanAmount')}%0A`;
-            message += `*贷款用途:* ${formData.get('purpose')}%0A`;
-            message += `*就业状况:* ${employmentMap[formData.get('employment')]}%0A`;
-            message += `*月收入:* RM ${formData.get('monthlyIncome')}%0A%0A`;
-            message += `_此申请通过网站表单提交_`;
-            
-            return message;
-        }
-        
-        // 初始化语言
-        applyLanguage(currentLang);
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
