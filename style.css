@@ -31,6 +31,11 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 * { box-sizing: border-box; }
 
 body {
@@ -167,6 +172,26 @@ nav a:hover { opacity: 0.8; }
     box-shadow: var(--shadow-button-hover);
 }
 
+/* 加载状态 */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+.btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-right-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
 .section-image {
     width: 100%;
     max-width: 800px;
@@ -286,7 +311,55 @@ nav a:hover { opacity: 0.8; }
     border-radius: var(--border-radius-m);
     box-shadow: var(--shadow-hero);
     transition: all 0.3s ease;
-    text-align: center;
+}
+.form-container h2 { 
+    text-align: center; 
+    margin-bottom: 25px; 
+}
+.form-container label { 
+    display: block; 
+    margin: 10px 0 5px; 
+    font-weight: 600; 
+    color: var(--color-text); 
+}
+.form-container input, 
+.form-container select { 
+    width: 100%; 
+    padding: 14px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: var(--border-radius-s); 
+    font-size: 16px; 
+    background: var(--color-bg-grey); 
+    transition: border-color 0.3s, box-shadow 0.3s; 
+    box-sizing: border-box; 
+}
+.form-container input:focus, 
+.form-container select:focus { 
+    outline: none; 
+    border-color: var(--color-primary-light); 
+    box-shadow: 0 0 8px rgba(0, 198, 137, 0.3); 
+    background: var(--color-bg-light); 
+}
+.form-container .form-group { 
+    margin-bottom: 20px; 
+    position: relative;
+}
+.form-container .form-group:last-child { 
+    margin-bottom: 0; 
+}
+
+/* 表单验证样式 */
+.form-container input.error, 
+.form-container select.error { 
+    border-color: var(--color-error);
+}
+.error-message {
+    color: var(--color-error);
+    font-size: 0.85em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 #contact { text-align: center; }
@@ -363,4 +436,4 @@ footer {
     }
     .hero h2, .hero p { text-align: center; }
     h2 { font-size: 1.8em; }
-}
+    }
